@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: tariqahsanspringbootapp 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: tariqahsanspringbootapp
+  template:
+    metadata:
+      labels:
+        app: tariqahsanspringbootapp 
+    spec:
+      containers:
+        - name: tariqahsanspringbootapp 
+          image: myacrrepo431.azurecr.io/tariqahsanspringbootapp
+          ports:
+          - containerPort: 80
